@@ -1,0 +1,23 @@
+[
+  {
+    "input": "Photosynthesis is the process by which green plants convert sunlight, CO2, and water into glucose and oxygen using chlorophyll in chloroplasts. It consists of two stages: light-dependent reactions (producing ATP and NADPH in thylakoids) and the Calvin cycle (converting CO2 to glucose in the stroma).",
+    "output": "[{\"front\": \"What is photosynthesis?\", \"back\": \"The process by which plants convert sunlight, CO2, and water into glucose and oxygen using chlorophyll\"}, {\"front\": \"Where does photosynthesis occur in plant cells?\", \"back\": \"In chloroplasts\"}, {\"front\": \"What are the two main stages of photosynthesis?\", \"back\": \"Light-dependent reactions and the Calvin cycle\"}, {\"front\": \"What do light-dependent reactions produce?\", \"back\": \"ATP and NADPH\"}, {\"front\": \"Where does the Calvin cycle occur?\", \"back\": \"In the stroma of chloroplasts\"}]"
+  },
+  {
+    "input": "The mitochondria is the powerhouse of the cell, producing ATP through cellular respiration. They have a double membrane with cristae (folded inner membrane) and contain their own DNA, supporting the endosymbiotic theory. Cellular respiration converts glucose and oxygen into ATP, CO2, and water.",
+    "output": "[{\"front\": \"What is the mitochondria called?\", \"back\": \"The powerhouse of the cell\"}, {\"front\": \"What does the mitochondria produce?\", \"back\": \"ATP (adenosine triphosphate)\"}, {\"front\": \"What are cristae?\", \"back\": \"Folded inner membranes of mitochondria that increase surface area for ATP production\"}, {\"front\": \"What evidence supports the endosymbiotic theory?\", \"back\": \"Mitochondria have their own DNA and ribosomes\"}, {\"front\": \"What are the products of cellular respiration?\", \"back\": \"ATP, carbon dioxide, and water\"}]"
+  },
+  {
+    "input": "Newton's First Law (law of inertia) states that objects at rest stay at rest and objects in motion continue moving at constant velocity unless acted upon by an unbalanced force. Inertia is the resistance to changes in motion and increases with mass.",
+    "output": "[{\"front\": \"What is Newton's First Law of Motion?\", \"back\": \"Objects at rest stay at rest and objects in motion stay in motion unless acted upon by an unbalanced force\"}, {\"front\": \"What is another name for Newton's First Law?\", \"back\": \"The law of inertia\"}, {\"front\": \"What is inertia?\", \"back\": \"The resistance of an object to changes in its motion\"}, {\"front\": \"How does mass affect inertia?\", \"back\": \"Greater mass means greater inertia\"}]"
+  },
+  {
+    "input": "DNA is the hereditary material storing genetic information in a code of four bases: adenine (A), thymine (T), guanine (G), and cytosine (C). These bases pair specifically (A-T, C-G) to form base pairs in a double helix structure. Each nucleotide consists of a base, sugar, and phosphate.",
+    "output": "[{\"front\": \"What does DNA stand for?\", \"back\": \"Deoxyribonucleic acid\"}, {\"front\": \"What are the four DNA bases?\", \"back\": \"Adenine (A), Thymine (T), Guanine (G), and Cytosine (C)\"}, {\"front\": \"How do DNA bases pair?\", \"back\": \"A pairs with T, and C pairs with G\"}, {\"front\": \"What is the structure of DNA called?\", \"back\": \"Double helix\"}, {\"front\": \"What are the three components of a nucleotide?\", \"back\": \"A base, a sugar molecule, and a phosphate molecule\"}]"
+  },
+  {
+    "input": "The water cycle is the continuous movement of water through evaporation (water turning to vapor), condensation (vapor forming clouds), precipitation (rain/snow falling), and collection (water returning to bodies of water or infiltrating ground). The cycle is driven by solar energy and gravity.",
+    "output": "[{\"front\": \"What are the four main stages of the water cycle?\", \"back\": \"Evaporation, condensation, precipitation, and collection\"}, {\"front\": \"What is evaporation?\", \"back\": \"The process where water turns into water vapor due to heat from the sun\"}, {\"front\": \"What is condensation in the water cycle?\", \"back\": \"The process where water vapor cools and forms clouds\"}, {\"front\": \"What is precipitation?\", \"back\": \"Water falling from clouds as rain, snow, sleet, or hail\"}, {\"front\": \"What drives the water cycle?\", \"back\": \"Solar energy and gravity\"}]"
+  }
+]
+

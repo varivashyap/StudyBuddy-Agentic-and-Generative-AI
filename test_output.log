@@ -1,0 +1,42 @@
+2025-11-16 12:43:07,766 - __main__ - INFO - ======================================================================
+2025-11-16 12:43:07,766 - __main__ - INFO - Testing from Preprocessed Data
+2025-11-16 12:43:07,766 - __main__ - INFO - ======================================================================
+2025-11-16 12:43:07,766 - __main__ - INFO - Loaded preprocessed text from data/preprocessed/sample_lecture_asr.txt
+2025-11-16 12:43:07,766 - __main__ - INFO -   Length: 36164 characters
+2025-11-16 12:43:07,766 - __main__ - INFO - 
+=== Processing Text ===
+2025-11-16 12:43:07,766 - __main__ - INFO - Initializing pipeline components...
+2025-11-16 12:43:07,779 - src.representation.embeddings - INFO - Loading local embedding model: all-MiniLM-L6-v2
+2025-11-16 12:43:07,779 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-16 12:43:08,158 - src.representation.embeddings - INFO - ✓ Loaded local embedding model: all-MiniLM-L6-v2
+2025-11-16 12:43:08,158 - src.representation.embeddings - INFO -   Model will run on: cpu
+2025-11-16 12:43:08,158 - src.representation.embeddings - INFO - Embedding dimension: 384
+2025-11-16 12:43:08,158 - src.representation.vector_store - INFO - Initializing FAISS index with dimension 384
+2025-11-16 12:43:08,158 - src.retrieval.reranker - INFO - Loading reranker model: cross-encoder/ms-marco-MiniLM-L-6-v2
+2025-11-16 12:43:14,826 - src.retrieval.reranker - INFO - Reranker model loaded on cpu
+2025-11-16 12:43:14,826 - __main__ - INFO - Cleaning text...
+2025-11-16 12:43:14,827 - __main__ - INFO - Chunking text...
+2025-11-16 12:43:14,828 - src.representation.chunker - INFO - Created 33 chunks from 1 documents
+2025-11-16 12:43:14,828 - __main__ - INFO - Created 33 chunks
+2025-11-16 12:43:14,828 - __main__ - INFO - Generating embeddings...
+Batches:   0%|          | 0/2 [00:00<?, ?it/s]Batches:  50%|█████     | 1/2 [00:01<00:01,  1.12s/it]Batches: 100%|██████████| 2/2 [00:01<00:00,  1.73it/s]
+2025-11-16 12:43:15,985 - src.representation.embeddings - INFO - ✓ Generated 33 embeddings locally (no API calls)
+2025-11-16 12:43:15,985 - __main__ - INFO - Adding to vector store...
+2025-11-16 12:43:15,985 - src.representation.vector_store - INFO - Added 33 vectors. Total: 33
+2025-11-16 12:43:15,985 - src.retrieval.hybrid_retriever - INFO - Building BM25 index
+2025-11-16 12:43:15,988 - src.retrieval.hybrid_retriever - INFO - Built BM25 index with 33 documents
+2025-11-16 12:43:15,988 - src.generation.llm_client - INFO - Initializing local LLM client (llama-cpp-python)
+2025-11-16 12:43:15,999 - src.generation.llm_client - INFO - Loading model: models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-11-16 12:43:15,999 - src.generation.llm_client - INFO - GPU acceleration: False
+2025-11-16 12:43:16,775 - src.generation.llm_client - INFO - ✓ Local LLM loaded successfully: mistral-7b-instruct-v0.2.Q4_K_M
+2025-11-16 12:43:16,775 - __main__ - INFO - 
+=== Generating Summary ===
+2025-11-16 12:43:16,784 - src.representation.embeddings - INFO - ✓ Generated 1 embeddings locally (no API calls)
+Traceback (most recent call last):
+  File "/home/xintrean/Documents/augment-projects/agentic-project/scripts/test_from_preprocessed.py", line 186, in <module>
+    main()
+  File "/home/xintrean/Documents/augment-projects/agentic-project/scripts/test_from_preprocessed.py", line 179, in main
+    generate_outputs(retriever, reranker, chunks)
+  File "/home/xintrean/Documents/augment-projects/agentic-project/scripts/test_from_preprocessed.py", line 115, in generate_outputs
+    context_chunks = reranker.rerank(query, context_chunks, top_k=8)
+TypeError: Reranker.rerank() got an unexpected keyword argument 'top_k'

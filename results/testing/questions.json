@@ -1,0 +1,108 @@
+{
+  "questions": [
+    {
+      "question": "What data structures are being discussed in this lecture?",
+      "options": [
+        "Sequences and sets",
+        "Linked lists and dynamic arrays",
+        "Dynamic arrays and pointers",
+        "Arrays and interfaces"
+      ],
+      "correct_answer": "Sequences and linked lists or Sequences and dynamic arrays",
+      "explanation": "The lecture is discussing sequences and either linked lists or dynamic arrays as data structures.",
+      "type": "mcq",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the difference between an interface and a data structure?",
+      "options": [
+        "An interface is a specification of what data can be stored, while a data structure gives you the actual representation.",
+        "A data structure is a specification of what data can be stored, while an interface gives you the actual representation.",
+        "An interface is how you do something, while a data structure is what you want to do.",
+        "An interface is what you want to do, while a data structure is how you do it."
+      ],
+      "correct_answer": "An interface is how you do something, while a data structure is what you want to do.",
+      "explanation": "An interface defines the operations that can be performed on a data structure, while a data structure provides the underlying implementation for those operations.",
+      "type": "mcq",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which operation takes linear time in an array?",
+      "options": [
+        "Getting an item by index",
+        "Setting an item by index",
+        "Inserting an item at the beginning",
+        "Deleting an item from the end"
+      ],
+      "correct_answer": "Resizing the array",
+      "explanation": "In an array, resizing the array takes linear time.",
+      "type": "mcq",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is a static sequence interface?",
+      "options": [
+        "An interface for sequences that can change size",
+        "An interface for sequences that cannot change size",
+        "An interface for linked lists",
+        "An interface for dynamic arrays"
+      ],
+      "correct_answer": "An interface for sequences that cannot change size",
+      "explanation": "A static sequence interface is an interface for sequences that cannot change size.",
+      "type": "mcq",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What are the main data structure tools or approaches mentioned in this lecture?",
+      "options": [
+        "Arrays and pointers",
+        "Dynamic arrays and linked lists",
+        "Sequences and sets",
+        "Interfaces and algorithms"
+      ],
+      "correct_answer": "Arrays and pointers",
+      "explanation": "The main data structure tools or approaches mentioned in this lecture are arrays and pointers.",
+      "type": "mcq",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between an array and a linked list?",
+      "options": [
+        "An array is a consecutive chunk of memory, while a linked list uses pointers to link items together.",
+        "A linked list is a consecutive chunk of memory, while an array uses pointers to link items together.",
+        "An array is a data structure that supports constant time get and set operations, while a linked list does not.",
+        "A linked list is a data structure that supports constant time get and set operations, while an array does not."
+      ],
+      "correct_answer": "An array is a consecutive chunk of memory, while a linked list uses pointers to link items together.",
+      "explanation": "An array is a contiguous block of memory, while a linked list uses pointers to connect nodes and create the sequence.",
+      "type": "mcq",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What are the main operations supported by the static sequence interface?",
+      "options": [
+        "Build, length, iteration, get, set, insert first, delete last, insert at arbitrary position, delete first, delete last, delete at arbitrary position",
+        "Build, length, iteration, get, set, insert last, delete first, insert at arbitrary position, delete last, delete at arbitrary position",
+        "Build, length, iteration, get, set, insert first, delete first, insert at arbitrary position, delete at arbitrary position",
+        "Build, length, iteration, get, set, insert last, delete last, insert at arbitrary position, delete first, delete at arbitrary position"
+      ],
+      "correct_answer": "Build, length, iteration, get, set",
+      "explanation": "The static sequence interface supports the operations build, length, iteration, get, and set.",
+      "type": "mcq",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the advantage of using a dynamic array over a static array?",
+      "options": [
+        "Dynamic arrays support constant time get and set operations, while static arrays do not.",
+        "Static arrays support constant time get and set operations, while dynamic arrays do not.",
+        "Dynamic arrays can change size dynamically, while static arrays cannot.",
+        "Static arrays can change size dynamically, while dynamic arrays cannot."
+      ],
+      "correct_answer": "Dynamic arrays can change size dynamically, while static arrays cannot.",
+      "explanation": "Dynamic arrays can resize themselves as needed, making them more flexible than static arrays which have a fixed size.",
+      "type": "mcq",
+      "difficulty": "medium"
+    }
+  ]
+}

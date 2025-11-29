@@ -1,0 +1,309 @@
+# Study Assistant Configuration
+# 100% OPEN-SOURCE - NO PAID APIS
+
+# PDF Processing (Open-Source Only)
+pdf:
+  tools:
+    primary: "pdfplumber"  # or "pymupdf"
+    ocr_fallback: "tesseract"  # "tesseract" (default) or "paddleocr" (requires paddlepaddle)
+  ocr:
+    confidence_threshold: 0.7
+    max_page_chunk_chars: 3000
+  layout_parser:
+    enabled: false  # Optional: requires layoutparser
+    model: "lp://PubLayNet/faster_rcnn_R_50_FPN_3x/config"
+
+# Audio Processing (Open-Source Only)
+audio:
+  asr:
+    model: "whisper-base"  # Changed from "whisper-large" for better CPU performance
+    # Options: whisper-tiny (39M), whisper-base (74M), whisper-small (244M),
+    #          whisper-medium (769M), whisper-large (1550M)
+    language: "en"
+    beam_size: 5
+    chunk_length_seconds: 30
+  diarization:
+    enabled: false  # Optional: requires pyannote.audio
+    model: "pyannote/speaker-diarization"
+  preprocessing:
+    denoise: true
+    method: "whisper_builtin"  # or "rnnoise"
+
+# Text Chunking
+chunking:
+  method: "sentence_sliding_window"
+  chunk_size_tokens: 300
+  overlap_tokens: 60
+  min_chunk_size: 100
+  max_chunk_size: 400
+  preserve_semantic_continuity: true
+
+# Embeddings (100% Local - NO API CALLS)
+embeddings:
+  # ONLY local sentence-transformers models supported
+  # OpenAI embeddings REMOVED (paid API)
+  model: "all-MiniLM-L6-v2"  # Fast, 384-dim (or "all-mpnet-base-v2" for 768-dim quality)
+  # Dimension is auto-detected from model
+  batch_size: 32
+  normalize: true
+
+  # Recommended open-source models:
+  # - all-MiniLM-L6-v2: 384-dim, fast, good quality
+  # - all-mpnet-base-v2: 768-dim, best quality
+  # - all-MiniLM-L12-v2: 384-dim, balanced
+  # - paraphrase-multilingual-MiniLM-L12-v2: multilingual support
+
+# Vector Store
+vector_store:
+  backend: "faiss"  # or "milvus"
+  faiss:
+    index_type: "IVF_PQ"
+    n_list: null  # auto-calculated as sqrt(N)
+    n_probe: 16
+    m: 64  # PQ subquantizers
+    nbits: 8
+  milvus:
+    collection_name: "study_assistant"
+    index_type: "IVF_FLAT"
+    metric_type: "IP"  # Inner Product
+    nlist: 1024
+
+# Retrieval
+retrieval:
+  hybrid:
+    enabled: true
+    vector_weight: 0.7
+    bm25_weight: 0.3
+  top_k: 20
+  reranker:
+    enabled: true
+    model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    top_m: 6  # final context chunks after reranking
+
+# LLM Configuration (100% Local - NO PAID APIS)
+llm:
+  # ONLY "local" provider supported
+  # OpenAI and Anthropic REMOVED (paid APIs)
+  provider: "local"
+
+  local:
+    # Model name (GGUF file should be in models/ directory)
+    # Example: models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+    model: "mistral-7b-instruct-v0.2.Q4_K_M"  # or llama-3-8b-instruct, etc.
+    quantization: "Q4_K_M"  # Quantization level (Q4_K_M, Q5_K_M, Q8_0, etc.)
+
+    # Download GGUF models from:
+    # - Kaggle: https://www.kaggle.com/models
+    # - HuggingFace: https://huggingface.co/models?library=gguf
+    #
+    # Recommended models (all open-source):
+    # - Mistral-7B-Instruct (best quality/speed balance)
+    # - Llama-3-8B-Instruct (Meta's latest)
+    # - Phi-3-Mini (Microsoft, very fast)
+    # - Gemma-7B-IT (Google, good quality)
+
+# Generation Settings
+generation:
+  summaries:
+    temperature: 0.1
+    max_tokens: 600
+    top_p: 1.0
+    scales:
+      - "sentence"
+      - "paragraph"
+      - "section"
+  
+  flashcards:
+    temperature: 0.25
+    max_tokens: 1500  # Increased from 150 to allow multiple flashcards
+    top_p: 0.9
+    max_cards: 200
+    variants_per_fact: 3
+    types:
+      - "definition"
+      - "concept"
+      - "cloze"
+    validation:
+      min_similarity: 0.74
+  
+  quizzes:
+    temperature: 0.2
+    max_tokens: 200
+    top_p: 0.9
+    types:
+      - "mcq"
+      - "short_answer"
+      - "numerical"
+    difficulty_distribution:
+      easy: 0.4
+      medium: 0.3
+      hard: 0.3
+    mcq:
+      num_distractors: 3
+      distractor_method: "semantic_neighbors"
+
+# Knowledge Augmentation (Optional)
+augmentation:
+  enabled: false
+  sources:
+    - "wikipedia"
+    - "arxiv"
+  max_results: 10
+  freshness_years: 5
+  min_similarity: 0.7
+  require_consent: true
+
+# Evaluation
+evaluation:
+  metrics:
+    - "factuality"
+    - "coverage"
+    - "recall_at_k"
+  automated_checks:
+    max_hallucination_rate: 0.1
+    min_source_containment: 0.75
+  feedback:
+    enabled: true
+    storage: "data/feedback.jsonl"
+
+# Export
+export:
+  anki:
+    deck_name: "Study Assistant"
+    model_name: "Basic"
+  csv:
+    delimiter: ","
+    include_metadata: true
+
+# System
+system:
+  cache_dir: "data/cache"
+  log_level: "INFO"
+  max_workers: 4
+  device: "cpu"  # Changed from "cuda" - 4GB GPU not enough for all models
+
+# Training (Finetuning)
+training:
+  enabled: true
+  data_dir: "data/training"
+  output_dir: "results/models"
+
+  # Training hyperparameters
+  learning_rate: 2.0e-4
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  num_epochs: 3
+  max_seq_length: 2048
+  warmup_steps: 100
+
+  # LoRA configuration (for 4GB GPU)
+  use_lora: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+
+  # 4-bit quantization (for 4GB GPU)
+  use_4bit: true
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_quant_type: "nf4"
+
+  # Optimization
+  optimizer: "paged_adamw_8bit"
+  gradient_checkpointing: true
+  fp16: true
+
+  # Logging
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 50
+
+# Hyperparameter Search
+hparam_search:
+  enabled: false
+  method: "bayesian"  # "grid" or "bayesian"
+  n_trials: 20  # for Bayesian optimization
+  metric: "loss"  # metric to optimize
+  direction: "minimize"  # "minimize" or "maximize"
+
+  # Parameter search space
+  search_space:
+    learning_rate:
+      min: 1.0e-5
+      max: 1.0e-3
+    batch_size: [2, 4, 8, 16]
+    num_epochs:
+      min: 2
+      max: 10
+    lora_r: [8, 16, 32, 64]
+    lora_alpha: [16, 32, 64, 128]
+
+# Prompting Strategies
+prompting:
+  strategy: "few_shot"  # "base" | "system" | "one_shot" | "few_shot"
+  num_shots: 3  # for few-shot prompting
+  prompt_dir: "config/prompts"
+
+  # Custom prompt files (optional)
+  custom_prompts:
+    summary: null  # "config/prompts/summary.txt"
+    flashcard: null
+    quiz: null
+
+  # Example files for one-shot/few-shot
+  examples:
+    summary: null  # "config/prompts/summary_examples.json"
+    flashcard: null
+    quiz: null
+
+# Web Search (for question enrichment)
+websearch:
+  enabled: false  # Set to true to enable web enrichment
+  provider: "duckduckgo"  # Free, no API key required
+  max_results: 5
+  timeout: 10
+
+  # Resource types to search for
+  search_types:
+    - "articles"
+    - "videos"
+    - "practice"
+
+  # Trusted domains for practice problems
+  practice_domains:
+    - "khanacademy.org"
+    - "brilliant.org"
+    - "leetcode.com"
+    - "hackerrank.com"
+    - "projecteuler.net"
+    - "mathway.com"
+    - "stackoverflow.com"
+
+# Evaluation Metrics
+metrics:
+  output_dir: "results/metrics"
+
+  # Summary metrics
+  summary:
+    - "rouge_l"
+    - "bert_score"
+    - "cosine_similarity"
+
+  # Flashcard metrics
+  flashcard:
+    - "coverage"
+    - "redundancy"
+    - "semantic_precision"
+    - "semantic_recall"
+
+  # Quiz metrics
+  quiz:
+    - "factuality"
+    - "difficulty_consistency"
+    - "relevance"
+
+  # Comparison settings
+  comparison:
+    enabled: true
+    baseline_dir: "results/baseline"
+    improved_dir: "results/improved"
+
