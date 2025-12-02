@@ -1,0 +1,4 @@
+type,difficulty,question,answer,option_a,option_b,option_c,option_d,correct_option
+mcq,medium,"Given a Set data structure, which operation returns the stored item with the smallest key?",find min(),len(),find min(),insert(x),delete(k),find min()
+mcq,medium,Which data structure interface supports both static and dynamic operations?,Both Sequence and Set interfaces support both static and dynamic operations.,Sequence,Dynamic Array,Linked List,Set,Both Sequence and Set interfaces support both static and dynamic operations.
+mcq,easy,What is the amortized time complexity of deleting an item from a Dynamic Array?,Θ(1),Θ(1),Θ(n),Θ(log n),Θ(√n),Θ(1)

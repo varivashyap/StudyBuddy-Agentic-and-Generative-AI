@@ -1,0 +1,23 @@
+[
+  {
+    "input": "Photosynthesis is the process by which green plants convert sunlight, CO2, and water into glucose and oxygen using chlorophyll in chloroplasts. It consists of two stages: light-dependent reactions (producing ATP and NADPH in thylakoids) and the Calvin cycle (converting CO2 to glucose in the stroma).",
+    "output": "[{\"question\": \"What are the products of photosynthesis?\", \"answer\": \"Glucose and oxygen\", \"type\": \"short_answer\"}, {\"question\": \"Where in the chloroplast do light-dependent reactions occur?\", \"answer\": \"In the thylakoid membranes\", \"type\": \"short_answer\"}, {\"question\": \"Which of the following is NOT a requirement for photosynthesis? A) Sunlight B) Carbon dioxide C) Nitrogen D) Water\", \"answer\": \"C) Nitrogen\", \"type\": \"mcq\"}]"
+  },
+  {
+    "input": "The mitochondria is the powerhouse of the cell, producing ATP through cellular respiration. They have a double membrane with cristae (folded inner membrane) and contain their own DNA, supporting the endosymbiotic theory.",
+    "output": "[{\"question\": \"Why is the mitochondria called the powerhouse of the cell?\", \"answer\": \"Because it produces ATP, the cell's main energy source\", \"type\": \"short_answer\"}, {\"question\": \"What is the function of cristae in mitochondria?\", \"answer\": \"To increase surface area for ATP production\", \"type\": \"short_answer\"}, {\"question\": \"Which theory is supported by mitochondria having their own DNA? A) Cell theory B) Endosymbiotic theory C) Evolution theory D) Atomic theory\", \"answer\": \"B) Endosymbiotic theory\", \"type\": \"mcq\"}]"
+  },
+  {
+    "input": "Newton's First Law (law of inertia) states that objects at rest stay at rest and objects in motion continue moving at constant velocity unless acted upon by an unbalanced force. Inertia is the resistance to changes in motion and increases with mass.",
+    "output": "[{\"question\": \"State Newton's First Law of Motion.\", \"answer\": \"An object at rest stays at rest and an object in motion stays in motion at constant velocity unless acted upon by an unbalanced force\", \"type\": \"short_answer\"}, {\"question\": \"How does mass affect an object's inertia?\", \"answer\": \"Greater mass results in greater inertia\", \"type\": \"short_answer\"}, {\"question\": \"A hockey puck sliding on ice will eventually stop due to: A) Inertia B) Friction C) Gravity D) Mass\", \"answer\": \"B) Friction\", \"type\": \"mcq\"}]"
+  },
+  {
+    "input": "DNA is the hereditary material storing genetic information in a code of four bases: adenine (A), thymine (T), guanine (G), and cytosine (C). These bases pair specifically (A-T, C-G) to form base pairs in a double helix structure.",
+    "output": "[{\"question\": \"What are the four nitrogenous bases in DNA?\", \"answer\": \"Adenine, thymine, guanine, and cytosine\", \"type\": \"short_answer\"}, {\"question\": \"Which base pairs with adenine in DNA?\", \"answer\": \"Thymine\", \"type\": \"short_answer\"}, {\"question\": \"What is the shape of DNA's structure called? A) Single helix B) Double helix C) Triple helix D) Quadruple helix\", \"answer\": \"B) Double helix\", \"type\": \"mcq\"}]"
+  },
+  {
+    "input": "The water cycle is the continuous movement of water through evaporation, condensation, precipitation, and collection. The cycle is driven by solar energy and gravity, with plants contributing through transpiration.",
+    "output": "[{\"question\": \"What are the four main processes in the water cycle?\", \"answer\": \"Evaporation, condensation, precipitation, and collection\", \"type\": \"short_answer\"}, {\"question\": \"What two forces drive the water cycle?\", \"answer\": \"Solar energy and gravity\", \"type\": \"short_answer\"}, {\"question\": \"What is the process called when plants release water vapor? A) Evaporation B) Condensation C) Transpiration D) Precipitation\", \"answer\": \"C) Transpiration\", \"type\": \"mcq\"}]"
+  }
+]
+

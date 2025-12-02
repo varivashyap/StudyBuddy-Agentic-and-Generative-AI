@@ -1,0 +1,6 @@
+type,front,back
+definition,Set Interface,A data structure interface that maintains a collection of unique items with keys.
+definition,Sequence Interface,A data structure interface that maintains a collection of items in a specific order.
+definition,Linked List Sequence,A pointer-based data structure for implementing a sequence interface.
+definition,Dynamic Array,A resizable array implementation for a sequence interface with amortized constant time operations.
+definition,Amortized Analysis,A technique to distribute the cost of an operation over multiple operations to ensure average-case efficiency.

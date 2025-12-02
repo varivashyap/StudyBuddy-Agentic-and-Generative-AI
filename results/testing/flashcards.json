@@ -1,0 +1,89 @@
+{
+  "flashcards": [
+    {
+      "front": "What is a sequence data structure?",
+      "back": "A data structure used to store and perform operations on a collection of items in a specific order",
+      "type": "definition"
+    },
+    {
+      "front": "What is the static sequence interface?",
+      "back": "An interface for a sequence data structure with a fixed number of items",
+      "type": "definition"
+    },
+    {
+      "front": "What are the main operations supported by the static sequence interface?",
+      "back": "Build, length, iteration, get, and set",
+      "type": "definition"
+    },
+    {
+      "front": "What is dynamic array?",
+      "back": "A data structure that can resize itself to accommodate a changing number of items",
+      "type": "definition"
+    },
+    {
+      "front": "What is the difference between an interface and a data structure?",
+      "back": "An interface specifies what operations can be performed, while a data structure provides a representation and algorithms for those operations",
+      "type": "definition"
+    },
+    {
+      "front": "What is the dynamic sequence interface?",
+      "back": "An interface for a sequence data structure that allows for adding and removing items at any position",
+      "type": "definition"
+    },
+    {
+      "front": "What are the main operations supported by the dynamic sequence interface?",
+      "back": "Build, length, iteration, get, set, insert before, insert after, delete before, and delete after",
+      "type": "definition"
+    },
+    {
+      "front": "What is a linked list?",
+      "back": "A data structure where items are stored in nodes connected by pointers",
+      "type": "definition"
+    },
+    {
+      "front": "How does a linked list implement the getat operation?",
+      "back": "By following the next pointers from the head of the list to the desired node",
+      "type": "definition"
+    },
+    {
+      "front": "How does a linked list implement the setat operation?",
+      "back": "By updating the item in the node corresponding to the desired position",
+      "type": "definition"
+    },
+    {
+      "front": "What is the time complexity of accessing an element in a linked list?",
+      "back": "Constant for getat and setat at any position, but linear for iterating through all elements",
+      "type": "definition"
+    },
+    {
+      "front": "What is a static array?",
+      "back": "A data structure with a fixed size that can store a collection of items of the same type",
+      "type": "definition"
+    },
+    {
+      "front": "What are the advantages of using a static array?",
+      "back": "Fast access to specific elements due to their contiguous memory allocation",
+      "type": "definition"
+    },
+    {
+      "front": "What are the disadvantages of using a static array?",
+      "back": "Cannot change the size of the array once it is created, leading to wasted space or out-of-bounds errors",
+      "type": "definition"
+    },
+    {
+      "front": "What is a dynamic array?",
+      "back": "A data structure that can resize itself as items are added or removed",
+      "type": "definition"
+    },
+    {
+      "front": "How does a dynamic array implement adding an item at the end?",
+      "back": "By allocating more memory and copying existing elements to the new location",
+      "type": "definition"
+    },
+    {
+      "front": "How does a dynamic array implement removing an item from the end?",
+      "back": "By decreasing the size of the array and moving remaining items to fill the gap left by the removed item",
+      "type": "definition"
+    }
+  ]
+}
