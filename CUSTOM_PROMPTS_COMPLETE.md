@@ -8,6 +8,7 @@ Successfully implemented **custom system prompts** feature that allows users to 
 
 ## 🎯 What Was Implemented
 
+
 ### **1. Backend Implementation**
 
 #### **Settings Manager** (`mcp_server/settings_manager.py`)
