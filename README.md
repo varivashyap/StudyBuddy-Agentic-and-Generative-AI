@@ -1,4 +1,4 @@
-# Study Assistant - 100% Open-Source AI Learning Tool
+# Study Buddy - 100% Open-Source AI Learning Tool
 
 **🎉 NO API KEYS • NO COSTS • 100% PRIVACY • RUNS LOCALLY**
 
